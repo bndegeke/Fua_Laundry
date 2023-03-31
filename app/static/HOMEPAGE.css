@@ -1,0 +1,393 @@
+*{
+    margin:0;
+    padding:0;
+  }
+  #banner{
+  background-image:linear-gradient(rgba(3,0,1,0.8),#019587),url("Screenshot_20210316-193404.jpg");
+  background-size:cover;
+  background-position:center;
+  height:100vh;
+  
+  }
+  .logo{
+  width:200px;
+  position: absolute;
+  top:2%;
+  left:5%;
+  line-height: 2%;
+  
+  }
+  .banner-text{
+    text-align:center;
+    color:#f4a715;
+    padding-top:10%;
+  }
+  .banner-text h1{
+    font-size:150px;
+    font-family:"C059";
+  }
+  .banner-text p{
+    font-size:30px;
+    font-family:"LM Mono Slanted 10";
+    font-style:bold;
+    font-weight: 100;
+  }
+  .banner-btn{
+  margin:100px auto 0;
+  }
+  .banner-btn a{
+  width:150px;
+  text-decoration:none;
+  display:inline-block;
+  margin:0 10px;
+  padding:12px 0;
+  color:white;
+  border:.5px solid  #fff;
+  position:relative;
+  z-index:1;
+  transition:color 0.5s;
+  }
+  .banner-btn a span{
+  width:0%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  background:tan;
+  z-index:-1;
+  transition:0.5s;
+  }
+  
+   .banner-btn a:hover span{
+  width:100%;
+  }
+  
+  .banner-btn a:hover{
+    color:orange;
+   }
+   
+   
+  a{
+    text-decoration: none;
+  }
+  
+  
+  
+  
+  a{
+    text-decoration: none;
+  }
+  
+  
+  
+  @media only screen and (max-width : 992px){
+  
+    
+    
+  }
+
+  @media screen and (max-width:770px){
+  .banner-text h1{
+    font-size:45px;
+  }
+    .banner-btn a{
+    display:block;
+    margin:20px auto;
+    }
+  }
+  
+  #feature{
+  width:100%;
+  padding:70px 0;
+  
+  
+  }
+  
+  
+  .title-text{
+  text-align:center;
+  padding-bottom:70px;
+  
+  }
+  
+  .title-text p{
+  margin:auto;
+  font-size:20px;
+  color:orange;
+  font-weight:bold;
+  position:relative;
+  z-index:1;
+  display:inline-block;
+  
+  
+  }
+  .title-text p::after{
+    content:"";
+    width:50px;
+    height:35px;
+    background:linear-gradient(#019587,#fff);
+    position:absolute;
+    top:-20px;
+    left:0;
+    z-index:-1;
+    transform:rotate(10deg);
+    border-top-left-radius:35px;
+    border-bottom-right-radius:35px;
+       
+        
+  }
+  .title-text h1{
+  font-size:30px;
+  }
+  
+  .feature-box{
+  width:80%;
+  margin:auto;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  text-align:center;
+  }
+  .features{
+  flex-basis:40%;
+  
+  }
+  .features-img{
+  flex-basis:50%;
+  margin:auto;
+
+  /* for the download button  */
+
+  
+  
+  }
+  .features-img img{
+  width:70%;
+  border-radius:10px;
+  }
+  
+  .features h1{
+  text-align:left;
+  margin-bottom:10px;
+  font-weight:100;
+  color:orange;
+ 
+  }
+ .features-desc{
+ display:flex;
+ align-items:center;
+ margin-bottom:40px;
+ 
+ 
+ }
+  .feature-icon fa{
+  width:50px;
+  height:50px;
+  font-size:50px;
+  line-height:50px;
+  border-radius:8px;
+  color:orange;
+  border:1px solid orange;
+  }
+  
+  .feature-text p{
+  padding:0 20px;
+  text-align:initial;
+  
+  }
+  #service{
+  width:100%;
+  padding:70px 0;
+  background:#efefef;
+  }
+  
+  .service-box{
+  width:80%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  margin:auto;
+  }
+  
+  .single-service{
+  flex-basis:48%;
+  text-align:center;
+  border-radius:7px;
+  margin-bottom:20px;
+  position:relative;
+  color:white;
+  
+  }
+  
+  .single-service img{
+  width:100%;
+  border-radius:7px;
+  }
+  
+  .overlay{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  border-radius:7px;
+  cursor:pointer;
+  background:linear-gradient(rgba(0,0,0,0.5),#009688);
+  opacity:0;
+  transition:1s;
+  }
+  
+  .single-service:hover .overlay{
+        opacity:1;
+  }
+  
+  .service-desc{
+  width:80%;
+  position:absolute;
+  bottom:0%;
+  left:50%;
+  opacity:0;
+  transform:translateX(-50%);
+  transition:1s;
+  }
+  
+  hr{
+  background:white;
+  height:2px;
+  border:0;
+  margin:15px auto;
+  width:39%;
+  
+  }
+  
+  .service-desc p{
+  font-size:15px;
+  
+  }
+  
+  .single-service:hover .service-desc{
+  bottom:40%;
+  opacity:50;
+  
+  }
+  
+  
+  @media screen and (max-width:770px){
+  .service-service {
+  flex-basis:100%;
+  margin-bottom:30px;
+  }
+  .service-desc p{
+  font-size:12px;
+ }
+ 
+ hr{
+ margin:5px auto;
+ 
+ }
+ .single-service:hover .service-desc{
+  bottom:25% !important;
+  opacity:1;
+  }
+ #feedback{
+ width:100%;
+ padding:70px 0;
+ }
+ 
+ .feedback-row{
+ width:80%;
+ margin:auto;
+ display:flex;
+ justify-content:space-between;
+ align-items:flex-start;
+ flex-wrap:wrap;
+ 
+ }
+ .feedback-col{
+ flex-basis:28%;
+ padding:10px;
+ margin-bottom:30px;
+ border-radius:5px;
+ box-shadow:0 10px 20px 3px #00968814;
+ cursor:pointer;
+ }
+ 
+ .feedback-col p{
+ font-size:14px;
+
+ }
+ 
+ .user{
+ display:flex;
+ align-content:center;
+ margin:20px 0;
+  }
+  
+  .user img{
+  width:40PX;
+  margin-right:20px;
+  border-radius:3px;
+  }
+  .user-info{
+  margin-left:10px;
+  color:green;
+  font-size:20px;
+  }
+  
+  .user-info small{
+  color:blue;
+  
+  }
+  #footer{
+  padding:100px 0 20px;
+  background:#efefef;
+  }
+  
+  .footer-row{
+  width:80%;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  }
+  .footer-left,.footer-right{
+  flex-basis:45%;
+  padding:10px;
+  margin-bottom:20px;
+  
+  }
+  .social-links{
+  text-align:center;
+  
+  
+  }
+  .social-links .fa{
+  height:400px;
+  width:100px;
+  font-size:20px;
+  line-height:400px;
+  border:1px solid #009688;
+  margin:40px 5px 0;
+  color:#009688;
+  cursor:pointer;
+  transition:.5s;
+  }
+  .social-links .fa:hover{
+  background:#dbebe9;
+  color:#fff;
+  transform:translateY(-7px);
+  
+  }
+
+
+  }
+  
+  
+  /* NAVIGATION BAR MANENOZ */
+  
+
+
+
+
+
+
+

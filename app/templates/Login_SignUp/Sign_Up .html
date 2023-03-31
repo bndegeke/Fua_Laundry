@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_Sign_Up</title>
+    <link rel="stylesheet" href="{{url_for('static' ,filename='Login_SignUp/Login_Sign_Up.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" 
+	integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	<!-- PUT THE NAVIGATION BAR HERE  -->
+
+
+
+</head>
+<body>
+
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="" method="post">
+			{{ form.hidden_tag() }}
+			<h1>Create Account</h1>
+			{{ form.name(placeholder="Name")}}
+			{%for error in form.name.errors %}
+			<p>{{ error }}</p>
+			{% endfor %}
+			{{ form.email(placeholder="Email")}}
+			{%for error in form.email.errors %}
+			<p>{{ error }}</p>
+			{% endfor %}
+			{{ form.password(placeholder="Password")}}
+			{%for error in form.password.errors %}
+			<p>{{ error }}</p>
+			{% endfor %}
+
+			 {{form.submit(placeholder="SIGN UP" , 
+			 style= 'border-radius: 20px;
+				border: 1px solid #019587;
+				background-color:#019587;
+				color: #FFFFFF;
+				font-size: 12px;
+				font-weight: bold;
+				padding: 12px 45px;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				transition: transform 80ms ease-in;'
+			)}} 
+		</form>
+	</div>
+
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<a href="{{url_for('auth.signin')}}"><button class="ghost" id="signIn"> Sign In</button></a>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+
+</footer>
+<script src="{{url_for('static',filename='Login_SignUp/Login_Sign_Up.js')}}"></script>
+<script src="{{url_for('static',filename='NAVBAR/navbar.js')}}"></script>
+</body>
+</html>
