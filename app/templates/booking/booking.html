@@ -56,5 +56,44 @@
 				{{form.submit(placeholder="Book" ,class="button")}}
 
 			</form>
+            </div>
+            <div style="padding: 50px;">
+                <table>
+                    <tr>
+                        <th style="color: white;">
+                            Day
+                        </th>
+    
+                        <th style="color: white;">
+                            Laundry Type
+                        </th>
+                        <th style="color: white;">
+                            Location
+                        </th>
+                        <th style="color: white;">
+                            Status
+                        </th>
+                        <th style="color: white;">
+                            Payment Mode
+                        </th>
+                    </tr>
+                    {% for booking in data %}
+                        <tr>
+                            <td>{{booking.date.strftime("%d-%m-%Y")}}</td>
+                            <td>{{booking.type_laundry}}</td>
+                            <td>{{booking.location}}</td>
+                            {% if booking.completed == True %}
+                                <td>Completed</td>
+                            {% else %}
+                                <td>Pending</td>
+                            {% endif %}
+                            <td>{{booking.payment}}</td>
+    
+                        </tr>
+                        
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
 </body>
 </html>
