@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+		{% for messages in get_flashed_messages() %}
+			<div style="
+				color: black; 
+				font-size: 20px; 
+				border-radius: 10px; 
+				width: 600px; 
+				background-color: #d4edda; 
+				height: 50px; 
+				justify-content: center;
+				flex-direction: row;
+				align-items: center;
+			" id="alert-message">
+				<p style="
+				font-size: 15px;
+				color: black;
+				">{{messages}}</p>
+			</div>
+		{%endfor %}
+		<p>Book</p>
+		<div class="form-div" style="justify-content: center; display: flex;">
+
+			<form method="post" style="padding: '7px';">
+				{{ form.hidden_tag() }}
+
+
+				{{ form.day(placeholder="Date")}}
+				{%for error in form.day.errors %}
+				<p class='error'>{{ error }}</p>
+				{% endfor %}
+
+				{{ form.laundry(placeholder="Laundry Type" ,class="payment")}}
+				{%for error in form.laundry.errors %}
+				<p class='error'>{{ error }}</p>
+				{% endfor %}
+
+				{{ form.payment_mode(placeholder="Payment Mode" , class="payment")}}
+				{%for error in form.payment_mode.errors %}
+				<p class='error'>{{ error }}</p>
+				{% endfor %}
+
+				{{ form.location(placeholder="Location" )}}
+				{%for error in form.location.errors %}
+				<p class='error'>{{ error }}</p>
+				{% endfor %}
+
+				{{form.submit(placeholder="Book" ,class="button")}}
+
+			</form>
+</body>
+</html>
