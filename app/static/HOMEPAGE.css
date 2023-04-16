@@ -5,7 +5,7 @@
   #banner{
   background-image:linear-gradient(rgba(3,0,1,0.8),#019587),url("Screenshot_20210316-193404.jpg");
   background-size:cover;
-  background-position:center;
+  background-position:cnter;
   height:100vh;
   
   }
