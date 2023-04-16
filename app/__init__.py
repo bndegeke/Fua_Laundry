@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_migrate import Migrate
-from .models import db , login_manager
+from .models import db  , User
+from flask_login import LoginManager
 
 
 # import the apps configuration
@@ -9,7 +10,8 @@ from .config import Config
 
 
 migrate = Migrate()
-
+login_manager = LoginManager()
+login_manager.login_view = "auth.signin"
 
 
 
@@ -23,6 +25,12 @@ def create_app():
     login_manager.init_app(app)
 
 
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+
+
     from app.routes.home import home
     app.register_blueprint(home)
 
@@ -33,5 +41,8 @@ def create_app():
 
     from app.routes.auth import auth
     app.register_blueprint(auth)
+
+    from app.routes.booking import booking
+    app.register_blueprint(booking)
 
     return app

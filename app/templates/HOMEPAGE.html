@@ -28,8 +28,17 @@
  <div class="banner-btn">
 
  <a href="{{url_for('gallery.index')}}"><span></span><b>Our Gallery!</b></a>
- <a href="{{url_for('auth.register')}}"><span></span><b>Sign Up</b></a>
+ {% if current_user.is_authenticated %}
+
+ <a href="{{url_for('booking.index')}}"><span></span><b>Book</b></a>
+ <a href="{{url_for('auth.signin')}}"><span></span><b>Logout</b></a>
+
+{% else %}
+<a href="{{url_for('auth.register')}}"><span></span><b>Sign Up</b></a>
  <a href="{{url_for('auth.signin')}}"><span></span><b>Sign In</b></a>
+
+ {% endif %}
+ 
 
  
  </div>

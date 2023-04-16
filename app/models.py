@@ -1,11 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-from werkzeug.security import generate_password_hash , check_password_hash
-from flask_login import LoginManager
+from datetime import datetime
 
 
 db = SQLAlchemy()
-login_manager = LoginManager()
 
 
 class User(UserMixin, db.Model):
@@ -13,9 +11,14 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(200) , nullable = False)
     email = db.Column(db.String(200) , nullable = False , unique=True)
     password = db.Column(db.String(200) , nullable = False )
+    bookings = db.relationship("Booking" , backref="user")
 
 
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.get_id(user_id)
+class Booking(db.Model):
+    id = db.Column(db.Integer , primary_key = True)
+    date = db.Column(db.DateTime, nullable=False)
+    type_laundry = db.Column(db.String(200) , nullable=False)
+    payment = db.Column(db.String(200) , nullable = False) 
+    location = db.Column(db.String(200) , nullable=False)
+    completed = db.Column(db.Boolean , default = False)
+    user_id = db.Column(db.Integer , db.ForeignKey('user.id'))
