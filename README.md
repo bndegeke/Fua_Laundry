@@ -1,5 +1,5 @@
 "# Mamafua_Booking_Laundry" 
-
+Is an online laundry booking platform where various persons do booking and the involved personnel do their recording.
 
 cd into the root folder
 run the command pip3 install -r requirements.txt to install the project requirements
